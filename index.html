@@ -12,65 +12,7 @@
 <div class="tabs"><button class="tab active" data-filter="all">Todos (57)</button><button class="tab" data-filter="seen">Registrados</button><button class="tab" data-filter="unseen">Não registrados</button><button class="tab" data-filter="above">Acima da média</button><button class="tab" data-filter="below">Abaixo da média</button></div>
 <div class="layout"><main class="panel"><div class="panelTitle"><h2>Casos OLL</h2><span class="hint">Clique no caso que apareceu</span></div><div id="grid" class="grid"></div></main><aside class="side"><section class="panel"><div class="panelTitle"><h2>Resumo estatístico</h2></div><div class="mini"><div><small>Média esperada</small><b>17,54</b></div><div><small>Mediana atual</small><b id="median">0</b></div><div><small>Maior contagem</small><b id="maxCount">0</b></div><div><small>Menor contagem</small><b id="minCount">0</b></div></div></section><section class="panel"><div class="panelTitle"><h2>Ranking</h2><span class="hint">mais → menos</span></div><div id="ranking" class="ranking"></div></section><section class="panel"><div class="panelTitle"><h2>Distribuição</h2></div><div id="chart" class="distribution"></div><div class="legend"><span>🟦 frequência</span><span>— média esperada: <b>17,54</b></span></div></section></aside></div><footer>Seus dados ficam salvos neste navegador. O aplicativo funciona sem internet depois de aberto e pode ser continuado mesmo após fechar a página.</footer></div>
 <div id="modal" class="modal"><div class="modalbox"><button class="btn close" id="closeModal">Fechar</button><h2>🎉 Pesquisa concluída!</h2><p>Você registrou as 1.000 soluções. Veja um resumo da distribuição dos seus OLLs.</p><div class="finalgrid"><div class="finalstat"><small>Mais frequente</small><b id="fm">—</b></div><div class="finalstat"><small>Menos frequente</small><b id="fl">—</b></div><div class="finalstat"><small>Maior %</small><b id="fp">0%</b></div><div class="finalstat"><small>Casos registrados</small><b id="fs">0/57</b></div><div class="finalstat"><small>Maior contagem</small><b id="fx">0</b></div><div class="finalstat"><small>Menor contagem</small><b id="fn">0</b></div></div><button class="btn primary" id="exportFinal">Exportar resultados CSV</button></div></div><div id="toast" class="toast"></div>
-<script type="module">const IMAGES=[
-  "imagens/oll-caso-054.png", // OLL 1
-  "imagens/oll-caso-055.png", // OLL 2
-  "imagens/oll-caso-052.png", // OLL 3
-  "imagens/oll-caso-053.png", // OLL 4
-  "imagens/oll-caso-011.png", // OLL 5
-  "imagens/oll-caso-010.png", // OLL 6
-  "imagens/oll-caso-024.png", // OLL 7
-  "imagens/oll-caso-025.png", // OLL 8
-  "imagens/oll-caso-023.png", // OLL 9
-  "imagens/oll-caso-022.png", // OLL 10
-  "imagens/oll-caso-026.png", // OLL 11
-  "imagens/oll-caso-027.png", // OLL 12
-  "imagens/oll-caso-037.png", // OLL 13
-  "imagens/oll-caso-036.png", // OLL 14
-  "imagens/oll-caso-038.png", // OLL 15
-  "imagens/oll-caso-039.png", // OLL 16
-  "imagens/oll-caso-056.png", // OLL 17
-  "imagens/oll-caso-050.png", // OLL 18
-  "imagens/oll-caso-051.png", // OLL 19
-  "imagens/oll-caso-057.png", // OLL 20
-  "imagens/oll-caso-003.png", // OLL 21
-  "imagens/oll-caso-004.png", // OLL 22
-  "imagens/oll-caso-007.png", // OLL 23
-  "imagens/oll-caso-005.png", // OLL 24
-  "imagens/oll-caso-006.png", // OLL 25
-  "imagens/oll-caso-002.png", // OLL 26
-  "imagens/oll-caso-001.png", // OLL 27
-  "imagens/oll-caso-016.png", // OLL 28
-  "imagens/oll-caso-046.png", // OLL 29
-  "imagens/oll-caso-047.png", // OLL 30
-  "imagens/oll-caso-015.png", // OLL 31
-  "imagens/oll-caso-014.png", // OLL 32
-  "imagens/oll-caso-008.png", // OLL 33
-  "imagens/oll-caso-019.png", // OLL 34
-  "imagens/oll-caso-021.png", // OLL 35
-  "imagens/oll-caso-035.png", // OLL 36
-  "imagens/oll-caso-020.png", // OLL 37
-  "imagens/oll-caso-034.png", // OLL 38
-  "imagens/oll-caso-048.png", // OLL 39
-  "imagens/oll-caso-049.png", // OLL 40
-  "imagens/oll-caso-045.png", // OLL 41
-  "imagens/oll-caso-044.png", // OLL 42
-  "imagens/oll-caso-013.png", // OLL 43
-  "imagens/oll-caso-012.png", // OLL 44
-  "imagens/oll-caso-009.png", // OLL 45
-  "imagens/oll-caso-018.png", // OLL 46
-  "imagens/oll-caso-032.png", // OLL 47
-  "imagens/oll-caso-033.png", // OLL 48
-  "imagens/oll-caso-030.png", // OLL 49
-  "imagens/oll-caso-031.png", // OLL 50
-  "imagens/oll-caso-040.png", // OLL 51
-  "imagens/oll-caso-042.png", // OLL 52
-  "imagens/oll-caso-028.png", // OLL 53
-  "imagens/oll-caso-029.png", // OLL 54
-  "imagens/oll-caso-043.png", // OLL 55
-  "imagens/oll-caso-041.png", // OLL 56
-  "imagens/oll-caso-017.png", // OLL 57
-];
+<script type="module">const IMAGES=[`imagens/oll-caso-054.png`,`imagens/oll-caso-055.png`,`imagens/oll-caso-052.png`,`imagens/oll-caso-053.png`,`imagens/oll-caso-011.png`,`imagens/oll-caso-010.png`,`imagens/oll-caso-024.png`,`imagens/oll-caso-025.png`,`imagens/oll-caso-023.png`,`imagens/oll-caso-022.png`,`imagens/oll-caso-026.png`,`imagens/oll-caso-027.png`,`imagens/oll-caso-037.png`,`imagens/oll-caso-036.png`,`imagens/oll-caso-038.png`,`imagens/oll-caso-039.png`,`imagens/oll-caso-056.png`,`imagens/oll-caso-050.png`,`imagens/oll-caso-051.png`,`imagens/oll-caso-057.png`,`imagens/oll-caso-003.png`,`imagens/oll-caso-004.png`,`imagens/oll-caso-007.png`,`imagens/oll-caso-005.png`,`imagens/oll-caso-006.png`,`imagens/oll-caso-002.png`,`imagens/oll-caso-001.png`,`imagens/oll-caso-016.png`,`imagens/oll-caso-046.png`,`imagens/oll-caso-047.png`,`imagens/oll-caso-015.png`,`imagens/oll-caso-014.png`,`imagens/oll-caso-008.png`,`imagens/oll-caso-019.png`,`imagens/oll-caso-021.png`,`imagens/oll-caso-035.png`,`imagens/oll-caso-020.png`,`imagens/oll-caso-034.png`,`imagens/oll-caso-048.png`,`imagens/oll-caso-049.png`,`imagens/oll-caso-045.png`,`imagens/oll-caso-044.png`,`imagens/oll-caso-013.png`,`imagens/oll-caso-012.png`,`imagens/oll-caso-009.png`,`imagens/oll-caso-018.png`,`imagens/oll-caso-032.png`,`imagens/oll-caso-033.png`,`imagens/oll-caso-030.png`,`imagens/oll-caso-031.png`,`imagens/oll-caso-040.png`,`imagens/oll-caso-042.png`,`imagens/oll-caso-028.png`,`imagens/oll-caso-029.png`,`imagens/oll-caso-043.png`,`imagens/oll-caso-041.png`,`imagens/oll-caso-017.png`]
 
 /* =========================================================================
    FIREBASE — LOGIN COM GOOGLE + SALVAMENTO NA NUVEM
